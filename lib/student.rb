@@ -31,6 +31,7 @@ class Student
     sql = "SELECT name FROM students WHERE grade = 9"
 
     DB[:conn].execute(sql).count
+    binding.pry
   end
 
   def self.students_below_12th_grade
