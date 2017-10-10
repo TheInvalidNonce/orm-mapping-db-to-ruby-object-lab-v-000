@@ -4,8 +4,10 @@ class Student
   attr_accessor :id, :name, :grade
 
   def self.new_from_db(row)
-    # student = self.new
-    row.map { |k, v| Student.new.send("#{k}=", v) }
+    new_student = self.new
+    new_student.id = row[0]
+    new_student.name = row[1]
+    new_student.grade = row[2]
 
   end
 
