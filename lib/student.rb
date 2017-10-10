@@ -4,9 +4,8 @@ class Student
   attr_accessor :id, :name, :grade
 
   def self.new_from_db(row)
-    sql = "SELECT row from students"
-    binding.pry
-
+    # student = self.new
+    row.map { |k, v| self.send("#{k}=", v) }
 
   end
 
