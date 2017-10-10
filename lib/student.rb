@@ -39,10 +39,10 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def self.first_X_students_in_grade_10(x)
+  def self.first_X_students_in_grade_10(num)
     sql = "SELECT * FROM students WHERE grade = 10 LIMIT ?"
 
-    DB[:conn].execute(sql, x)
+    DB[:conn].execute(sql, num)
   end
 
   def self.first_student_in_grade_10
