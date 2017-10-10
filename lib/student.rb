@@ -5,7 +5,7 @@ class Student
 
   def self.new_from_db(row)
     # student = self.new
-    row.map { |k, v| self.send("#{k}=", v) }
+    row.each { |k, v| self.send("#{k}=", v) }
 
   end
 
