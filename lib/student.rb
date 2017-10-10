@@ -24,7 +24,7 @@ class Student
     # return a new instance of the Student class
     sql = "SELECT name FROM students WHERE name = ? LIMIT 1"
 
-    DB[:conn].prepare(sql).execute(name).map { |row| self.new_from_db(row) }.forst
+    DB[:conn].prepare(sql).execute(name).map { |row| self.new_from_db(row) }.first
   end
 
   def save
