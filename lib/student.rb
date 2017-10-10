@@ -27,6 +27,16 @@ class Student
     DB[:conn].execute(sql, name).map { |row| self.new_from_db(row) }.first
   end
 
+  def self.count_all_students_in_grade_9
+    sql = "SELECT name FROM students WHERE grade = 9"
+
+    DB[:conn].execute(sql).count
+  end
+
+  def self.students_below_12th_grade
+
+  end
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
