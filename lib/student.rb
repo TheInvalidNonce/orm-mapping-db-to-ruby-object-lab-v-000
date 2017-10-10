@@ -43,7 +43,8 @@ class Student
     sql = "SELECT * FROM students WHERE grade = 10 LIMIT ?"
 
     DB[:conn].execute(sql, x)
-
+  end
+  
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
